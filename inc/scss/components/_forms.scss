@@ -1,0 +1,127 @@
+input,
+textarea,
+select {
+    color: #010101;
+    padding: 21px 26px;
+    border: 4px solid #e2e2e2;
+    border-radius: 5px;
+    width: 100%;
+    display: inline-block;
+
+    @include responsive(mobile-small, max) {
+        padding: 15px;
+    }
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+        color: #010101;
+    }
+    &::-moz-placeholder {
+        color: #010101;
+    }
+    &:-ms-input-placeholder {
+        color: #010101;
+    }
+    &:-moz-placeholder {
+        color: #010101;
+    }
+}
+
+.wpcf7 {
+    form {
+        .wpcf7-response-output {
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            font-size: 14px;
+            border: 0;
+            font-weight: 600;
+            padding: 7px;
+            padding-left: 50px;
+            position: relative;
+            margin-left: 0;
+            margin-right: 0;
+
+            &:before {
+                content: "";
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                position: absolute;
+                top: 7px;
+                left: 15px;
+            }
+        }
+
+        &.sent {
+            .wpcf7-response-output {
+                background: #d7ffde;
+                color: #008334;
+                border-left: 4px solid #008334;
+
+                &:before {
+                    background-image: url(../inc/assets/check-circle-solid-green.svg);
+                }
+            }
+        }
+
+        &.failed,
+        &.invalid {
+            .wpcf7-response-output {
+                background: #ffd7d7;
+                color: #ff5a5a;
+                border-left: 4px solid #ff5a5a;
+
+                &:before {
+                    background-image: url(../inc/assets/exclamation-circle-solid-red.svg);
+                }
+            }
+        }
+    }
+}
+
+.wpcf7-form-control-wrap {
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 100%;
+
+    &.your-firstname {
+        input {
+            border-right-width: 2px;
+            border-radius: 5px 0 0 5px;
+        }
+    }
+
+    &.your-lastname {
+        input {
+            border-left-width: 2px;
+            border-radius: 0 5px 5px 0;
+        }
+    }
+}
+
+.wpcf7-spinner {
+    background-color: $white;
+
+    &:before {
+        background-color: #000;
+    }
+}
+
+.wpcf7-not-valid,
+.inputerror {
+    border-color: #ff0202 !important;
+}
+
+.wpcf7-form-control-wrap .wpcf7-not-valid-tip {
+    display: none;
+}
+
+.wpcf7-spinner {
+}

@@ -1,0 +1,3131 @@
+section {
+    background-position: center;
+
+    &.bg-blue {
+        background-image: url(../inc/assets/blue-stripe-bg.png);
+
+        .text-blue {
+            color: $white;
+        }
+
+        .breadcrumb-wrap {
+            color: $white;
+
+            a {
+                color: $white;
+            }
+        }
+
+        .blue-strip-btn {
+            @extend .yellow-strip-btn;
+        }
+
+        .btn-blue {
+            @extend .btn-grey;
+        }
+    }
+
+    &.bg-yellow {
+        color: #000;
+        background-image: url(../inc/assets/yellow-stripe-bg.png);
+
+        .yellow-strip-btn {
+            @extend .blue-strip-btn;
+        }
+
+        .breadcrumb-wrap {
+            li {
+                &:not(:last-child) {
+                    &:after {
+                        border-left-color: #000;
+                    }
+                }
+            }
+        }
+    }
+
+    &.bg-grey {
+        background-image: url(../inc/assets/grey-stripe-bg.png);
+        color: $black;
+    }
+}
+
+main {
+    margin-top: 124px;
+
+    @include responsive(medium-desktop, max) {
+        margin-top: 94px;
+    }
+
+    @include responsive(ipad-portrait, max) {
+        margin-top: 54px;
+    }
+
+    @include responsive(mobile-big, max) {
+        margin-top: 50px;
+    }
+
+    @include responsive(mobile-small, max) {
+        margin-top: 83px;
+    }
+}
+
+// Breadcrumb
+.breadcrumb-wrap {
+    font-family: $alt-font;
+    text-transform: uppercase;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-start;
+
+    @include responsive(mini-desktop, max) {
+        margin-bottom: 20px;
+    }
+
+    li {
+        padding: 0;
+
+        a {
+            color: $white;
+        }
+
+        &:not(:last-child) {
+            margin-right: 5px;
+            padding-right: 25px;
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                width: 0;
+                height: 0;
+                display: inline-block;
+                border: 6px solid transparent;
+                border-left-color: #ffcc00;
+            }
+        }
+    }
+}
+
+// 1. Header Banner Block
+.header-banner-block {
+    background-image: url(../inc/assets/blue-stripe-bg.png);
+    .title {
+        color: $white;
+        margin-bottom: 40px;
+
+        @include responsive(mini-desktop, min) {
+            font-size: 44px;
+            line-height: 1;
+        }
+
+        @include responsive(mini-desktop, max) {
+            margin-bottom: 20px;
+        }
+
+        span {
+            color: $yellow;
+        }
+    }
+
+    .content-col {
+        background-size: auto;
+        background-position: center;
+        color: $white;
+        padding: 90px 25px;
+        display: flex;
+        justify-content: center;
+
+        @include responsive(mobile-big, max) {
+            order: 2;
+            padding: 50px 15px 50px 15px;
+        }
+
+        .content-wrapper {
+            width: 70%;
+
+            @include responsive(desktop, max) {
+                width: 80%;
+            }
+
+            @include responsive(medium-desktop, max) {
+                width: 90%;
+            }
+
+            @include responsive(mobile-big, max) {
+                width: 100%;
+            }
+        }
+    }
+
+    .bg-col {
+        background-size: cover;
+        background-position: center;
+
+        @include responsive(mobile-big, max) {
+            height: 400px;
+            order: 1;
+        }
+
+        @include responsive(mobile-small, max) {
+            height: 350px;
+        }
+    }
+
+    .btn-wrapper {
+        margin-top: 30px;
+
+        @include responsive(mobile-big, max) {
+            margin-top: 20px;
+        }
+
+        .btn {
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+        }
+
+        .yellow-strip-btn {
+            &:hover {
+                background: $white;
+                color: $blue;
+
+                &:after {
+                    background-image: url(../inc/assets/arrow-alt-right-solid-blue.svg);
+                }
+            }
+        }
+
+        .secondary-button {
+            font-size: 21px;
+            padding: 33px 20px;
+            text-align: center;
+            background-color: $white;
+            color: $blue;
+            border-color: $white;
+
+            @include responsive(medium-desktop, max) {
+                font-size: 17px;
+                padding: 15px 20px;
+            }
+
+            @include responsive(mobile-big, max) {
+                font-size: 15px;
+                padding: 10px 20px;
+            }
+
+            @include responsive(mobile-small, max) {
+                font-size: 14px;
+            }
+
+            &:hover {
+                color: $black;
+                background-color: #7aacd9;
+                border-color: #7aacd9;
+            }
+        }
+    }
+}
+
+#contact-us {
+    .header-banner-block {
+        .secondary-button {
+            @extend .yellow-strip-btn;
+
+            &:after {
+                display: none;
+            }
+        }
+
+        .content-col {
+            .content-wrapper {
+                width: 80%;
+
+                @include responsive(laptop, max) {
+                    width: 90%;
+                }
+
+                @include responsive(mobile-big, max) {
+                    width: 540px;
+                }
+
+                @include responsive(mobile-small, max) {
+                    width: 100%;
+                }
+
+                > p {
+                    width: 85%;
+                }
+            }
+        }
+    }
+}
+
+.usp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-left: 3px solid #7aacd9;
+    border-top: 3px solid #7aacd9;
+    border-radius: 5px;
+    overflow: hidden;
+
+    @include responsive(mobile-big, max) {
+        margin-bottom: 20px;
+    }
+
+    li {
+        padding: 6px;
+        border-width: 3px;
+        border-color: #7aacd9;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        flex: 0 0 100%;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 14px;
+
+        @include responsive(mobile-small, min) {
+            flex: 0 0 33.33%;
+        }
+
+        @include responsive(mobile-big, min) {
+            flex: 0 0 50%;
+        }
+
+        @include responsive(laptop, min) {
+            flex: 0 0 33.33%;
+        }
+
+        &:before {
+            content: "";
+            background-image: url(../inc/assets/check-circle-solid.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            flex: 0 0 24px;
+
+            @include responsive(laptop, max) {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+// 2. Header strip block
+.header-strip-block {
+    padding: 60px 0 75px;
+    background-image: url(../inc/assets/grey-stripe-bg.png);
+
+    @include responsive(ipad-portrait, max) {
+        padding: 30px 0;
+    }
+
+    .breadcrumb-wrap {
+        color: $blue;
+        font-family: $alt-font;
+        font-weight: 500;
+
+        @include responsive(ipad-portrait, max) {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: $blue;
+        }
+    }
+
+    .subtitle {
+        font-family: $alt-font;
+        font-weight: 500;
+    }
+
+    .title {
+        margin: 0;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+// 3. Content with Image Block
+.content-with-image-block {
+    .subtitle {
+        font-family: $alt-font;
+        font-weight: 500;
+    }
+
+    &.bg-blue {
+        background: $blue;
+        .content-col {
+            .subtitle {
+                color: $white;
+            }
+
+            .contact-details {
+                > * {
+                    color: $white;
+                }
+            }
+
+            .description {
+                &.heading-text-blue {
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5,
+                    h6 {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .usp-list {
+            li {
+                &:before {
+                    background-image: url(../inc/assets/check-circle-solid-yellow.svg);
+                }
+            }
+        }
+    }
+
+    &.bg-grey {
+        background: $light-grey;
+    }
+
+    .content-col {
+        padding: 98px 45px;
+        @include flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+
+        @include responsive(desktop, max) {
+            padding: 65px 0;
+        }
+
+        @include responsive(ipad-portrait, max) {
+            padding: 50px 15px 50px;
+        }
+
+        @include responsive(mobile-big, max) {
+            order: 2;
+        }
+
+        .content-wrapper {
+            max-width: 80%;
+
+            @include responsive(mini-desktop, max) {
+                max-width: 85%;
+            }
+
+            @include responsive(ipad-portrait, max) {
+                max-width: 100%;
+            }
+
+            @include responsive(mobile-big, max) {
+                max-width: 540px;
+                width: 540px;
+            }
+
+            @include responsive(mobile-small, max) {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+        .subtitle {
+            color: $blue;
+            font-family: $alt-font;
+            display: inline-block;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .title {
+            margin-bottom: 20px;
+        }
+
+        .description {
+            margin-bottom: 0;
+
+            @include responsive(ipad-portrait, max) {
+                margin-bottom: 20px;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                margin-bottom: 10px;
+                font-family: $alt-font;
+            }
+
+            &.heading-text-blue {
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    color: $blue;
+                }
+            }
+
+            &.heading-text-black {
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    color: $black;
+                }
+            }
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 25px;
+
+            > * {
+                flex: 0 0 auto;
+                display: flex;
+                align-items: center;
+                line-height: normal;
+                margin-bottom: 0;
+                color: $blue;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+
+                &:before {
+                    content: "";
+                    width: 25px;
+                    height: 25px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    margin-right: 10px;
+                    display: inline-block;
+                }
+            }
+
+            .phone {
+                &:before {
+                    background-image: url(../inc/assets/phone-solid-yellow-circle.svg);
+                }
+            }
+
+            .email {
+                &:before {
+                    background-image: url(../inc/assets/envelope-solid-yellow-circle.svg);
+                }
+            }
+        }
+
+        .btn {
+            margin-top: 42px;
+
+            @include responsive(mobile-big, max) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .bg-col {
+        background-size: cover;
+        background-position: center;
+
+        @include responsive(mobile-big, max) {
+            height: 400px;
+            order: 1;
+        }
+
+        @include responsive(mobile-small, max) {
+            height: 350px;
+        }
+    }
+}
+
+// 4. Quote Cta Block
+.quote-cta-block {
+    padding: 70px 0;
+    background-image: url(../inc/assets/blue-stripe-bg.png);
+    color: $white;
+
+    @include responsive(mobile-big, max) {
+        padding: 40px 0;
+    }
+
+    &.bg-yellow {
+        .description {
+            ul {
+                li {
+                    &::before {
+                        background-image: url(../inc/assets/check-circle-solid-black.svg);
+                    }
+                }
+            }
+        }
+    }
+
+    .title {
+        margin-bottom: 35px;
+        @include responsive(desktop, min) {
+            font-size: 36px;
+        }
+    }
+
+    .description {
+        ul {
+            padding: 0;
+            list-style: none;
+
+            li {
+                position: relative;
+                padding-left: 25px;
+                @include responsive(desktop, min) {
+                    font-size: 22px;
+                }
+
+                &::before {
+                    content: "";
+                    background-image: url(../inc/assets/check-circle-solid-yellow.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    display: inline-block;
+                    width: 19px;
+                    height: 19px;
+                    position: absolute;
+                    top: 3px;
+                    left: 0;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+
+    .btn {
+        max-width: 300px;
+        line-height: normal;
+
+        &:after {
+            flex: 0 0 auto;
+        }
+    }
+}
+
+// 5. FAQ Content with Image
+.faq-content-with-image-block {
+    background-color: $light-grey;
+
+    .subtitle {
+        font-family: $alt-font;
+        font-weight: 500;
+    }
+
+    .content-col {
+        display: flex;
+        justify-content: center;
+        padding: 60px 25px 85px;
+
+        @include responsive(mobile-big, max) {
+            order: 2;
+        }
+
+        .content-wrapper {
+            width: 70%;
+
+            @include responsive(mini-desktop, max) {
+                width: 85%;
+            }
+
+            @include responsive(ipad-portrait, max) {
+                width: 95%;
+            }
+
+            @include responsive(mobile-big, max) {
+                width: 510px;
+            }
+
+            @include responsive(mobile-small, max) {
+                width: 100%;
+            }
+        }
+
+        .breadcrumb-wrap {
+            margin-bottom: 0;
+
+            li {
+                span,
+                a {
+                    color: $blue;
+                }
+            }
+        }
+    }
+
+    .flex-md-row-reverse {
+        .content-col {
+            padding: 60px 25px 85px;
+
+            @include responsive(mobile-big, max) {
+                padding: 30px 15px;
+            }
+        }
+    }
+
+    .bg-col {
+        background-size: cover;
+        background-position: center;
+
+        @include responsive(mobile-big, max) {
+            height: 400px;
+            order: 1;
+        }
+    }
+}
+
+.accordian {
+    .accordion-item {
+        border: 0;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .accordion-header {
+        .accordion-button {
+            color: $white;
+            background-image: url(../inc/assets/blue-stripe-bg.png);
+            padding: 33px 15px;
+            border-radius: 5px;
+            margin-bottom: 0;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+
+            span.index {
+                height: 42px;
+                width: 42px;
+                flex: 0 0 42px;
+                border-radius: 50%;
+                background: $yellow;
+                color: $black;
+                line-height: normal;
+                @include flex;
+                @include justify-content(center);
+                @include align-items(center);
+                margin-right: 15px;
+
+                @include responsive(ipad-portrait, max) {
+                    height: 35px;
+                    width: 35px;
+                    flex: 0 0 35px;
+                }
+            }
+
+            &:after {
+                content: "";
+                background-image: url(../inc/assets/plus.svg);
+                background-size: contain;
+                background-position: center;
+                @include flex;
+                @include justify-content(center);
+                @include align-items(center);
+                font-size: 22px;
+            }
+
+            &:not(.collapsed) {
+                &:after {
+                    background-image: url(../inc/assets/minus.svg);
+                }
+            }
+
+            @include responsive(medium-desktop, max) {
+                padding: 15px;
+            }
+        }
+    }
+
+    .accordion-body {
+        padding: 50px 55px;
+        border: 0;
+
+        @include responsive(medium-desktop, max) {
+            padding: 25px;
+        }
+
+        p {
+            &:last-child,
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// 6. Content Block
+.content-block {
+    padding: 43px 0;
+
+    &.bg-yellow {
+        ul {
+            li {
+                &:before {
+                    background-image: url(../inc/assets/check-circle-solid-blue.svg);
+                }
+            }
+        }
+    }
+
+    .comment-body {
+        padding: 25px;
+        border-radius: 20px;
+        padding-left: 0;
+    }
+
+    ul {
+        padding-left: 0;
+        list-style: none;
+
+        li {
+            padding-left: 30px;
+            margin-bottom: 15px;
+            position: relative;
+
+            &:before {
+                content: "";
+                background-image: url(../inc/assets/check-circle-solid-yellow.svg);
+                width: 25px;
+                height: 25px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+    .content-row {
+        > * {
+            @include responsive(mobile-big, max) {
+                flex: 0 0 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+// 7. USP content block
+.usp-content-block {
+    padding: 60px 0 75px;
+
+    .subtitle {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-family: $alt-font;
+        font-weight: 500;
+    }
+
+    .title {
+        margin-bottom: 40px;
+    }
+
+    .content {
+        margin-bottom: 50px;
+    }
+
+    .btn-wrapper {
+        margin-top: 60px;
+
+        @include responsive(mobile-big, max) {
+            margin-top: 30px;
+        }
+    }
+}
+.usp-wrapper {
+    background-color: $white;
+    padding: 50px 27px 30px;
+    text-align: center;
+    color: $black;
+    width: 100%;
+
+    img {
+        height: 50px;
+        width: auto;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 30px;
+
+        @include responsive(ipad-portrait, max) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .heading {
+        @include responsive(mini-desktop, max) {
+            margin-bottom: 15px;
+        }
+
+        @include responsive(ipad-portrait, max) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// 8. Google Map Block
+.google-map-block {
+    .map-iframe {
+        height: 561px;
+    }
+}
+
+// 9. Testimonials Block
+.testimonials-block {
+    padding: 60px 0 80px;
+
+    @include responsive(mobile-big, max) {
+        padding: 50px 0;
+    }
+
+    .title {
+        margin-bottom: 60px;
+
+        @include responsive(mobile-big, max) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .subtitle {
+        font-family: $alt-font;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .swiper-button-next {
+        right: 155px;
+
+        @include responsive(medium-desktop, max) {
+            right: 40px;
+        }
+
+        @include responsive(mobile-big, max) {
+            right: 0;
+        }
+    }
+
+    .swiper-button-prev {
+        left: 155px;
+
+        @include responsive(medium-desktop, max) {
+            left: 40px;
+        }
+
+        @include responsive(mobile-big, max) {
+            left: 0;
+        }
+    }
+
+    &.bg-yellow {
+        .swiper-container {
+            .swiper-button-next,
+            .swiper-button-prev {
+                background: #fff;
+            }
+        }
+    }
+
+    .swiper-container {
+        padding: 0 calc((100vw - 1418px) / 2);
+
+        @include responsive(medium-desktop, max) {
+            padding: 0 calc((100vw - 1320px) / 2);
+        }
+
+        @include responsive(mini-desktop, max) {
+            padding: 0 calc((100vw - 1140px) / 2);
+        }
+
+        @include responsive(mobile-big, max) {
+            padding: 0 calc((100vw - 540px) / 2);
+        }
+
+        @include responsive(mobile-small, max) {
+            padding: 0;
+        }
+
+        .swiper-slide {
+            opacity: 0.5;
+            height: auto;
+
+            &.swiper-slide-active {
+                opacity: 1;
+            }
+
+            &.swiper-slide-prev,
+            &.swiper-slide-next {
+                opacity: 1;
+
+                @include responsive(ipad-portrait, max) {
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            height: 73px;
+            width: 73px;
+            background-color: $yellow;
+            border-radius: 50%;
+
+            @include responsive(mini-desktop, max) {
+                width: 53px;
+                height: 53px;
+            }
+
+            @include responsive(mobile-big, max) {
+                height: 40px;
+                width: 40px;
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+
+            &::after {
+                content: "";
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+
+                @include responsive(mini-desktop, max) {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                @include responsive(mobile-big, max) {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+
+        .swiper-button-prev {
+            &::after {
+                background-image: url(../inc/assets/arrow-alt-right-solid.svg);
+                transform: rotate(180deg);
+            }
+        }
+
+        .swiper-button-next {
+            &::after {
+                background-image: url(../inc/assets/arrow-alt-right-solid.svg);
+            }
+        }
+    }
+}
+
+.testimonial-wrapper {
+    color: $black;
+    background: $white;
+    padding: 40px 45px;
+    border-radius: 5px;
+    text-align: center;
+    height: 100%;
+
+    @include responsive(mini-desktop, max) {
+        padding: 30px 25px;
+    }
+
+    &.bg-gray {
+        background-color: $light-grey;
+    }
+
+    .content {
+        margin-bottom: 40px;
+        position: relative;
+
+        &:after,
+        &:before {
+            content: "";
+            width: 43px;
+            height: 39px;
+            opacity: 0.1;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+
+            @include responsive(mobile-big, max) {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        &:before {
+            top: -4px;
+            left: -30px;
+            background-image: url(../inc/assets/quote-left-solid-blue.svg);
+        }
+
+        &:after {
+            bottom: -4px;
+            right: -25px;
+            background-image: url(../inc/assets/quote-right-solid-blue.svg);
+        }
+    }
+
+    .name {
+        color: $blue;
+
+        span {
+            font-weight: 400;
+            margin-left: 7px;
+
+            &:before {
+                content: "-";
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+// 10. Blog Listing Block
+.blog-listing-block {
+    padding: 60px 0 85px;
+    background: $light-grey;
+
+    @include responsive(mobile-big, max) {
+        padding: 50px 0;
+    }
+
+    @include responsive(mobile-small, max) {
+        padding-bottom: 0;
+    }
+
+    .post-thumb {
+        > a {
+            width: 100%;
+        }
+    }
+
+    .title-wrap {
+        margin-bottom: 20px;
+    }
+
+    .subtitle {
+        margin-bottom: 10px;
+        display: inline-block;
+        font-family: $alt-font;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .title {
+        margin-bottom: 0;
+    }
+
+    .big-post {
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #fff;
+        height: 100%;
+
+        .post-thumb {
+            height: 276px;
+            overflow: hidden;
+
+            @include responsive(ipad-portrait, max) {
+                height: auto;
+            }
+        }
+
+        .post-content-wrapper {
+            padding: 43px 49px;
+
+            @include responsive(ipad-portrait, max) {
+                padding: 20px 15px;
+            }
+
+            .post-date {
+                margin-right: 15px;
+            }
+
+            .author {
+                a {
+                    color: $black;
+                }
+            }
+
+            .entry-meta-wrap {
+                margin-bottom: 25px;
+
+                @include responsive(mobile-big, max) {
+                    margin-bottom: 5px;
+                }
+            }
+
+            .entry-title {
+                color: $blue;
+                margin-bottom: 20px;
+            }
+
+            .entry-content {
+                margin-bottom: 26px;
+            }
+        }
+    }
+
+    .small-post {
+        border-radius: 5px;
+        overflow: hidden;
+        @include flex;
+        flex-direction: column;
+        height: 100%;
+
+        .post-thumb {
+            height: 100px;
+            overflow: hidden;
+
+            @include responsive(ipad-portrait, max) {
+                height: auto;
+            }
+
+            a {
+                width: 100%;
+            }
+        }
+
+        .post-content-wrapper {
+            padding: 30px 40px 40px;
+            background-color: $white;
+            flex: 1;
+
+            @include responsive(medium-desktop, max) {
+                padding: 15px;
+            }
+
+            @include responsive(ipad-portrait, max) {
+                padding: 10px;
+            }
+
+            .entry-title {
+                color: $blue;
+                font-size: 18px;
+                line-height: normal;
+                margin-bottom: 18px;
+
+                @include responsive(ipad-portrait, max) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .entry-content {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+// 11. Product Usage Block
+.product-usage-block {
+    padding: 60px 0;
+    background-color: $light-grey;
+
+    .subtitle {
+        font-family: $alt-font;
+        color: $blue;
+        margin-bottom: 10px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .title {
+        margin-bottom: 40px;
+    }
+
+    .card-box {
+        height: 100%;
+        @include flex;
+        flex-direction: column;
+
+        .card-top {
+            padding: 40px 8%;
+            @include flex;
+            @include align-items(center);
+            background-size: cover;
+            background-position: center;
+
+            @include responsive(mini-desktop, max) {
+                padding: 40px 15px;
+            }
+
+            @include responsive(ipad-portrait, max) {
+                padding: 20px 15px;
+            }
+
+            img {
+                height: 40px;
+                width: auto;
+                margin-right: 27px;
+
+                @include responsive(mobile-big, max) {
+                    height: 30px;
+                    margin-right: 15px;
+                }
+            }
+
+            .card-title {
+                margin-bottom: 0;
+            }
+        }
+
+        .card-bottom {
+            position: relative;
+            padding: 30px 8% 100px;
+            background-color: #fff;
+            flex: 1;
+
+            @include responsive(mini-desktop, max) {
+                padding: 30px 15px 100px;
+            }
+
+            @include responsive(ipad-portrait, max) {
+                padding: 30px 15px 70px;
+            }
+
+            .card-content {
+                margin-bottom: 20px;
+                font-family: $alt-font;
+                font-weight: 500;
+            }
+
+            a {
+                position: absolute;
+                bottom: 45px;
+
+                @include responsive(ipad-portrait, max) {
+                    bottom: 20px;
+                }
+            }
+        }
+
+        &.style-1 {
+            .card-top {
+                background-image: url(../inc/assets/blue-stripe-bg.png);
+
+                .card-title {
+                    color: $white;
+                }
+            }
+        }
+
+        &.style-2 {
+            .card-top {
+                background-image: url(../inc/assets/yellow-stripe-bg.png);
+            }
+        }
+    }
+
+    .product-grid {
+        > .col {
+            @include responsive(desktop, max) {
+                width: 33.33%;
+                flex: 0 0 33.33%;
+            }
+
+            @include responsive(ipad-portrait, max) {
+                width: 50%;
+                flex: 0 0 50%;
+            }
+
+            @include responsive(ipad-portrait, max) {
+                width: 100%;
+                flex: 0 0 100%;
+            }
+        }
+    }
+}
+
+// 12. Clients Section Block
+.client-logos-block {
+    padding: 30px 0;
+
+    .swiper-slide {
+        img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+        }
+    }
+}
+
+//13. Product Suggestion Block
+.product-category-grid-block {
+    padding: 50px 0;
+
+    .subtitle {
+        font-family: $alt-font;
+        font-weight: 500;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .title {
+        margin-bottom: 40px;
+
+        @include responsive(mobile-big, max) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .product-grid-wrapper {
+        border-top: 2px solid $light-grey;
+        border-left: 2px solid $light-grey;
+
+        .category-item {
+            border-right: 2px solid $light-grey;
+            border-bottom: 2px solid $light-grey;
+            padding: 40px 43px;
+            display: flex;
+            flex-direction: column;
+
+            @include responsive(ipad-portrait, max) {
+                padding: 20px;
+            }
+
+            .product-img {
+                flex: 1;
+            }
+
+            .title {
+                margin-bottom: 10px;
+                color: $black;
+            }
+
+            .count {
+                margin-bottom: 30px;
+                display: block;
+                color: $extra-light-grey;
+                font-family: $alt-font;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+// 14. Product Usage Block with Content Section
+.product-usage-with-content-block {
+    padding: 60px 0 75px;
+    background-color: $light-grey;
+
+    @include responsive(mobile-big, max) {
+        padding: 40px 0;
+    }
+
+    .subtitle {
+        text-transform: uppercase;
+    }
+
+    .title {
+        margin-bottom: 40px;
+
+        @include responsive(mobile-big, max) {
+            margin-bottom: 20px;
+        }
+    }
+
+    .feature-box {
+        text-align: center;
+        padding: 42px 20px;
+        background-color: #fff;
+        height: 100%;
+
+        @include responsive(mini-desktop, max) {
+            padding: 30px 15px;
+        }
+
+        img {
+            height: 40px;
+            width: auto;
+            display: block;
+            margin: 0 auto 25px;
+
+            @include responsive(mobile-big, max) {
+                margin-bottom: 5px;
+            }
+        }
+
+        .text {
+            font-family: $alt-font;
+        }
+    }
+
+    .content-box {
+        height: 100%;
+        background-image: url(../inc/assets/blue-stripe-bg.png);
+        color: $white;
+        padding: 40px;
+        border-radius: 4px;
+        position: relative;
+
+        @include responsive(mini-desktop, max) {
+            padding: 25px;
+        }
+
+        > .arrow-icon {
+            position: absolute;
+            bottom: 55px;
+            left: -45px;
+            width: auto;
+            height: auto;
+            z-index: 1;
+        }
+
+        .heading {
+            font-size: 26px;
+            line-height: normal;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            padding: 26px 40px;
+            margin-top: 20px;
+
+            @include responsive(mini-desktop, max) {
+                padding: 12px 20px;
+            }
+        }
+    }
+}
+
+// Blog Posts
+.blog-list-wrap {
+    padding-top: 40px;
+}
+
+article {
+    margin-bottom: 20px;
+
+    &:not(.sticky) {
+        .post-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+
+    &.sticky {
+        .post-thumb {
+            img {
+                height: 506px;
+                object-fit: cover;
+                object-position: center;
+
+                @include responsive(mobile-big, max) {
+                    height: 230px;
+                }
+            }
+        }
+
+        .post-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background-image: url(../inc/assets/blue-stripe-bg.png);
+            color: $white;
+        }
+
+        .post-wrapper {
+            @include responsive(mobile-big, max) {
+                flex-direction: column-reverse;
+            }
+
+            .entry-meta-wrap {
+                color: $yellow;
+
+                a {
+                    color: $yellow;
+                }
+            }
+        }
+
+        .post-content {
+            margin-bottom: 36px;
+        }
+
+        .entry-title {
+            color: $white;
+        }
+
+        .btn.btn-blue {
+            background-color: $white;
+            color: $blue;
+            border-color: $white;
+
+            &:hover {
+                background: transparent;
+                color: $white;
+            }
+        }
+    }
+}
+.post-wrapper {
+    border-radius: 4px;
+    overflow: hidden;
+
+    .post-content-wrapper {
+        background-color: $light-grey;
+        padding: 45px 45px 50px;
+        flex: 1;
+        position: relative;
+
+        @include responsive(mini-desktop, max) {
+            padding: 45px 25px 50px;
+        }
+
+        @include responsive(laptop, max) {
+            padding: 30px 15px 30px;
+        }
+
+        .btn {
+            position: absolute;
+            bottom: 45px;
+
+            @include responsive(laptop, max) {
+                bottom: 30px;
+            }
+
+            @include responsive(ipad-portrait, max) {
+                bottom: 25px;
+            }
+
+            @include responsive(mobile-big, max) {
+                position: relative;
+                bottom: 0;
+            }
+        }
+    }
+
+    .post-thumb {
+        a {
+            width: 100%;
+        }
+
+        img {
+            height: 230px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .entry-meta-wrap {
+        font-weight: 500;
+        margin-bottom: 25px;
+
+        @include responsive(laptop, max) {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        a {
+            color: $black;
+        }
+
+        .post-date {
+            margin-right: 30px;
+            display: inline-block;
+        }
+    }
+
+    .entry-title {
+        color: $blue;
+        margin-bottom: 18px;
+    }
+
+    p {
+        margin-bottom: 70px;
+
+        @include responsive(mobile-big, max) {
+            margin-bottom: 20px;
+        }
+    }
+
+    .btn {
+        @include responsive(ipad-landscape, max) {
+            padding: 12px 20px;
+            min-width: 150px;
+        }
+    }
+}
+
+// Review Listing Block
+.reviews-listing-block {
+    padding: 60px 0 70px;
+
+    ul {
+        padding: 0;
+        list-style: none;
+        display: inline-block;
+        column-count: 3;
+
+        .testimonial-wrapper {
+            padding: 40px 48px 50px;
+
+            @include responsive(laptop, max) {
+                padding: 20px 20px 25px;
+            }
+        }
+    }
+}
+
+// Blog Page Paginations
+.navigation.pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-top: 40px;
+}
+.nav-links {
+    display: flex;
+    justify-content: center;
+
+    .page-numbers {
+        width: 50px;
+        height: 50px;
+        background-color: $blue;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-family: $alt-font;
+        font-weight: 500;
+        margin-right: 20px;
+        @include transitionAll(0.3s ease-in-out);
+
+        @include responsive(mobile-small, max) {
+            width: 35px;
+            height: 35px;
+            margin-right: 10px;
+        }
+
+        &:hover {
+            background-color: $yellow;
+            color: $black;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.current {
+            background-color: $yellow;
+            color: $black;
+        }
+
+        &.dots {
+            background-color: transparent;
+            color: $blue;
+            font-weight: 700;
+            width: auto;
+            height: auto;
+        }
+    }
+}
+
+// Single Post Page
+.more-posts {
+    padding: 60px 0 65px;
+
+    @include responsive(ipad-portrait, max) {
+        padding: 60px 0 20px;
+    }
+
+    .title {
+        font-size: 36px;
+        line-height: 40px;
+
+        @include responsive(laptop, max) {
+            font-size: 28px;
+        }
+    }
+}
+
+.single-post {
+    .header-strip-block {
+        padding: 55px 0 180px;
+
+        .breadcrumb-wrap {
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .title {
+            text-align: center;
+            width: 70%;
+            margin: 0 auto;
+
+            @include responsive(ipad-portrait, max) {
+                width: 100%;
+            }
+        }
+    }
+
+    .feature-image-wrap {
+        > .container {
+            margin-top: -145px;
+        }
+
+        .attachment-post-thumbnail {
+            border-radius: 5px;
+        }
+    }
+
+    .content-wrap {
+        padding: 40px 0;
+
+        .social-share-list {
+            list-style: none;
+            padding: 0 25px;
+            margin: 0;
+            width: auto;
+            display: inline-block;
+
+            @include responsive(ipad-portrait, max) {
+                padding: 0;
+            }
+
+            @include responsive(mobile-small, max) {
+                display: flex;
+                justify-content: center;
+            }
+
+            li {
+                @include responsive(mobile-big, max) {
+                    margin-right: 15px;
+                }
+
+                .social-sharing-icon {
+                    height: 47px;
+                    width: 47px;
+                    background: $blue;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+
+                    @include responsive(mobile-big, max) {
+                        width: 35px;
+                        height: 35px;
+                    }
+
+                    > span {
+                        display: inline-block;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        clip-path: unset;
+                        clip: unset;
+                        width: 20px;
+                        height: 20px;
+                        font-size: 0;
+
+                        @include responsive(mobile-big, max) {
+                            width: 15px;
+                            height: 15px;
+                        }
+                    }
+
+                    &.facebook-f {
+                        > span {
+                            background-image: url("../inc/assets/facebook-f-brands.svg");
+                        }
+                    }
+
+                    &.twitter {
+                        > span {
+                            background-image: url("../inc/assets/twitter-brands.svg");
+                        }
+                    }
+
+                    &.linkedin-in {
+                        > span {
+                            background-image: url("../inc/assets/linkedin-in-brands.svg");
+                        }
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .entry-content {
+            flex: 1;
+
+            ul {
+                list-style: none;
+                padding: 0;
+                padding-left: 25px;
+
+                li {
+                    padding-left: 15px;
+                    position: relative;
+
+                    &:before {
+                        content: "";
+                        width: 5px;
+                        height: 5px;
+                        display: inline-block;
+                        position: absolute;
+                        left: 0;
+                        top: 8px;
+                        background-color: $blue;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    .comments {
+        padding: 0 0 60px;
+
+        .logged-in-as {
+            a {
+                color: $black;
+            }
+        }
+
+        .comment-form-comment {
+            > * {
+                display: block;
+            }
+
+            label {
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+        }
+
+        .form-submit {
+            [type="submit"] {
+                width: auto;
+            }
+        }
+    }
+
+    .blog-comment {
+        padding: 0;
+        list-style: none;
+
+        > .comment {
+            padding: 25px;
+        }
+
+        .comment {
+            margin-bottom: 20px;
+            background-color: $light-grey;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .children {
+                margin-top: 25px;
+                list-style: none;
+            }
+
+            .comment-author {
+                margin-right: 15px;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+
+                .fn {
+                    margin-left: 15px;
+                    a {
+                        font-weight: 700;
+                        color: $black;
+                        font-style: initial;
+                    }
+                }
+            }
+
+            .comment-meta {
+                margin-top: 15px;
+                a {
+                    color: #000;
+
+                    &:hover {
+                        color: $blue;
+                    }
+
+                    &.comment-edit-link {
+                        color: $blue;
+                    }
+                }
+            }
+
+            .reply {
+                .comment-reply-link {
+                    color: #000;
+                    padding: 1px 20px;
+                    border: 2px solid #000;
+                    border-radius: 16px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    @include transitionAll(0.3s ease-in-out);
+
+                    &:hover {
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .comment-respond {
+        .comment-reply-title {
+            @include responsive(mobile-big, max) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+// Product Page
+.archive {
+    .header-strip-block {
+        .breadcrumb-wrap {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.product-category-grid {
+    padding-top: 50px;
+
+    @include responsive(mobile-small, max) {
+        padding-top: 10px;
+    }
+
+    &:last-of-type {
+        padding-bottom: 50px;
+
+        @include responsive(mobile-small, max) {
+            padding-bottom: 10px;
+        }
+    }
+
+    .category-grid {
+        border: 4px solid #f7f7f7;
+        border-radius: 5px;
+
+        .category-title {
+            color: #000;
+        }
+    }
+}
+
+.products-list {
+    padding-top: 60px;
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+}
+
+.product-box {
+    overflow: hidden;
+    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #e2e2e2;
+
+    .post-thumb {
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+
+        @include responsive(laptop, max) {
+            height: 170px;
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            background: #1764a6;
+            color: #fff;
+            padding: 6px 15px;
+            font-size: 12px;
+            line-height: 1;
+            font-family: $alt-font;
+            font-weight: 500;
+            border-radius: 8px;
+            text-transform: uppercase;
+        }
+
+        > .post-thumb-box {
+            width: 100%;
+            height: 100%;
+
+            img {
+                object-fit: cover;
+                object-position: center;
+                height: 100%;
+
+                @include responsive(laptop, max) {
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    -o-object-position: center;
+                    object-position: center;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .post-content-wrapper {
+        padding: 35px 15px 90px;
+        flex: 1;
+        position: relative;
+
+        @include responsive(laptop, max) {
+            padding: 25px 15px 50px;
+        }
+
+        .btn {
+            border: 4px solid #e2e2e2;
+            padding: 16px 20px;
+            font-size: 14px;
+            line-height: 1;
+            color: #636363;
+            position: absolute;
+            bottom: 35px;
+            left: 15px;
+            @include transitionAll(0.3s ease-in-out);
+
+            @include responsive(laptop, max) {
+                padding: 12px 15px;
+                font-size: 12px;
+                border-width: 3px;
+                bottom: 18px;
+                min-width: auto;
+            }
+
+            &:hover {
+                background-color: #e2e2e2;
+            }
+        }
+    }
+}
+
+// Single Product
+.single-products {
+    .header-strip-block {
+        padding: 55px 0 60px;
+
+        @include responsive(mobile-big, max) {
+            padding: 40px 0;
+        }
+
+        .breadcrumb-wrap {
+            margin-bottom: 0;
+        }
+    }
+
+    .single-product-main-wrapper {
+        padding: 60px 0;
+
+        @include responsive(mobile-big, max) {
+            padding: 50px 0;
+        }
+
+        .product-image {
+            margin-bottom: 20px;
+        }
+    }
+
+    .related-products-wrapper {
+        padding: 60px 0;
+
+        @include responsive(mobile-big, max) {
+            padding: 0;
+        }
+
+        .category-grid {
+            border: 4px solid $light-grey;
+            border-radius: 5px;
+        }
+    }
+}
+
+.single-product-main-wrapper {
+    .product-info {
+        .title {
+            color: $blue;
+            font-size: 32px;
+            line-height: 1;
+            margin-bottom: 30px;
+
+            @include responsive(laptop, max) {
+                margin-bottom: 15px;
+            }
+
+            @include responsive(mobile-big, max) {
+                font-size: 26px;
+            }
+        }
+    }
+
+    .cta-button-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+
+        @include responsive(laptop, max) {
+            margin-top: 20px;
+        }
+
+        > * {
+            margin-right: 20px;
+            font-size: 19px;
+            padding: 34px 31px;
+
+            @include responsive(mini-desktop, max) {
+                padding: 12px 20px;
+                min-width: auto;
+            }
+
+            @include responsive(laptop, max) {
+                font-size: 14px;
+            }
+
+            @include responsive(ipad-portrait, max) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+// 404 Not Found Page
+.search-no-results {
+    .blog-list-wrap {
+        padding: 100px 0;
+
+        @include responsive(mobile-small, max) {
+            padding: 70px 0;
+        }
+    }
+}
+
+.not-found {
+    padding-bottom: 0;
+
+    .title {
+        font-size: 60px;
+
+        @include responsive(mobile-big, max) {
+            font-size: 50px;
+            line-height: normal;
+        }
+
+        @include responsive(mobile-small, max) {
+            font-size: 36px;
+        }
+    }
+
+    .btn {
+        margin-top: 20px;
+    }
+}
+
+// Landing Block
+.landing-block {
+    background-image: url(../inc/assets/blue-stripe-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .title-wrap {
+        color: #fff;
+    }
+
+    .feature-box {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        padding: 30px;
+        border-radius: 5px;
+
+        @include responsive(laptop, max) {
+            padding: 15px;
+        }
+
+        img {
+            width: 46px;
+            height: auto;
+            margin-right: 26px;
+            margin-left: 0;
+        }
+
+        .title {
+            margin-bottom: 10px;
+        }
+
+        .content {
+            p {
+                margin-bottom: 0;
+                font-size: 15px;
+            }
+        }
+    }
+
+    .right-content {
+        .content-box {
+            background: $white;
+            padding: 50px 30px 40px;
+            color: $black;
+
+            @include responsive(mobile-small, max) {
+                padding: 30px 30px 40px;
+            }
+
+            .heading {
+                text-align: center;
+                font-size: 28px;
+                width: 90%;
+                margin: 0 auto 32px;
+
+                @include responsive(laptop, max) {
+                    width: 100%;
+                }
+            }
+
+            ul {
+                width: 75%;
+                margin: 0 auto 40px;
+                list-style: none;
+                padding: 0;
+
+                @include responsive(laptop, max) {
+                    width: 100%;
+                }
+
+                li {
+                    padding-left: 30px;
+                    margin-bottom: 19px;
+                    position: relative;
+
+                    @include responsive(laptop, max) {
+                        margin-bottom: 15px;
+                    }
+
+                    &:before {
+                        content: "";
+                        background-image: url(../inc/assets/check-circle-solid-blue.svg);
+                        display: inline-block;
+                        width: 25px;
+                        height: 25px;
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Error Page
+.error-404 {
+    padding: 200px 0;
+}
+
+// Calculator Page
+.page-template-calculator-template {
+    header {
+        position: relative;
+        top: 0;
+
+        &.appear {
+            background-color: #fff;
+
+            .navbar-nav {
+                .menu-item {
+                    a {
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-content-wrap {
+        margin-top: 0 !important;
+    }
+
+    .calculate-header,
+    .calculator-wrapper {
+        .container {
+            max-width: 1170px;
+        }
+    }
+
+    .description {
+        p {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .calculator-step-1 {
+        margin-top: 30px;
+
+        @include responsive(ipad-portrait, max) {
+            margin-top: 0;
+        }
+    }
+
+    .footer-top {
+        .description {
+            p {
+                &:last-of-type {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
+
+.calculator-wrapper {
+    padding: 20px 0;
+
+    .calculate-1-title {
+        border-bottom: 2px solid #f7f7f7;
+        padding-bottom: 18px;
+        margin-bottom: 30px;
+    }
+
+    .calculator-tooltip {
+        position: absolute;
+        top: 0;
+        left: -45px;
+        cursor: pointer;
+
+        @include responsive(mobile-small, max) {
+            left: -25px;
+        }
+
+        &:hover {
+            .tooltip-text {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .tooltip-icon {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            background: url(../inc/assets/question-circle-solid-blue.svg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+
+            @include responsive(mobile-small, max) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .tooltip-text {
+            min-height: 70px;
+            position: absolute;
+            z-index: 10;
+            right: calc(100% + 15px);
+            top: -25px;
+            border: 2px solid $grey;
+            min-width: 180px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            background-color: #fff;
+            @include transitionAll(0.3s ease-in-out);
+
+            @include responsive(desktop, max) {
+                right: auto;
+                left: calc(100% + 10px);
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: 13px;
+                margin-bottom: 5px;
+                line-height: 1;
+            }
+
+            p {
+                font-size: 11px;
+                line-height: 15px;
+            }
+
+            .text-wrapper {
+                position: relative;
+
+                &:before,
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: calc(100% + 20px);
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+
+                    @include responsive(desktop, max) {
+                        right: calc(100% + 20px);
+                        left: auto;
+                    }
+                }
+
+                &:after {
+                    top: 10px;
+                    border-color: transparent transparent transparent #fff;
+                    border-width: 10px;
+
+                    @include responsive(desktop, max) {
+                        border-color: transparent #fff transparent transparent;
+                    }
+                }
+
+                &:before {
+                    top: 8px;
+                    border-color: transparent transparent transparent $grey;
+                    border-width: 12px;
+
+                    @include responsive(desktop, max) {
+                        border-color: transparent $grey transparent transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    .product-calculator {
+        @include flex;
+        flex-direction: column;
+
+        @include responsive(ipad-portrait, max) {
+            padding-left: 45px;
+        }
+
+        @include responsive(mobile-small, max) {
+            padding-left: 25px;
+        }
+    }
+
+    label {
+        position: relative;
+        margin-bottom: 11px;
+        .label-title {
+            font-family: $alt-font;
+            font-weight: 500;
+            margin-bottom: 0;
+
+            .required {
+                color: red;
+            }
+        }
+
+        .label-desc {
+            margin-bottom: 11px;
+        }
+    }
+
+    .calculator-options {
+        margin-bottom: 20px;
+
+        @include responsive(mobile-small, max) {
+            flex-direction: column;
+        }
+
+        > span {
+            @include responsive(mobile-small, max) {
+                margin-bottom: 10px;
+            }
+        }
+
+        [type="radio"],
+        [type="checkbox"] {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+
+            &:checked {
+                + .option {
+                    border-color: $black;
+                    background-color: $blue;
+                    color: $white;
+                }
+            }
+        }
+
+        .option {
+            display: inline-block;
+            padding: 19px 27px;
+            border: 4px solid $grey;
+            border-radius: 4px;
+            line-height: 1;
+
+            @include responsive(ipad-portrait, max) {
+                padding: 15px 20px;
+            }
+
+            @include responsive(mobile-big, max) {
+                padding: 10px;
+            }
+
+            @include responsive(mobile-small, max) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .field-wrapper {
+        margin-bottom: 40px;
+        position: relative;
+
+        @include responsive(mobile-small, max) {
+            margin-bottom: 20px;
+        }
+
+        label {
+            @include responsive(mobile-small, max) {
+                width: 100%;
+            }
+        }
+    }
+
+    .calculator-input-wrap {
+        display: flex;
+        align-items: flex-start;
+
+        @include responsive(mobile-big, max) {
+            flex-direction: column;
+        }
+
+        input,
+        select {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+
+            &[type="number"] {
+                -moz-appearance: textfield;
+            }
+
+            /* Chrome, Safari, Edge, Opera */
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &::-ms-expand {
+                display: none;
+            }
+        }
+
+        select {
+            cursor: pointer;
+            background: transparent;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 70%;
+            margin-right: 65px;
+
+            @include responsive(mobile-big, max) {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            @include responsive(mobile-small, max) {
+                margin-bottom: 5px;
+            }
+
+            &.length {
+                &:after {
+                    content: "(Metres)";
+                    position: absolute;
+                    top: 50%;
+                    right: 15px;
+                    color: #a5a5a5;
+                    font-weight: 500;
+                    @include translateY(-50%);
+                }
+            }
+
+            .error-message {
+                color: red;
+                display: inline-block;
+                font-size: 15px;
+            }
+        }
+
+        .select-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 70%;
+            margin-right: 65px;
+            margin-bottom: 20px;
+            cursor: pointer;
+
+            @include responsive(mobile-big, max) {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            &:after {
+                content: "";
+                width: 75px;
+                height: 100%;
+                border-left: 4px solid $grey;
+                background-size: 30%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url(../inc/assets/caret-down-solid.svg);
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: -1;
+
+                @include responsive(mobile-small, max) {
+                    width: 50px;
+                }
+            }
+        }
+
+        .img-wrapper {
+            position: relative;
+
+            @include responsive(mobile-big, max) {
+                margin-top: 10px;
+            }
+
+            img {
+                width: 120px;
+                height: auto;
+
+                @include responsive(mobile-big, max) {
+                    width: 100%;
+                }
+
+                &.invisible {
+                    display: none;
+                }
+            }
+        }
+
+        + .calculator-options {
+            margin-top: 20px;
+        }
+
+        .calculator-tabs-input-wrap {
+            width: 70%;
+            margin-right: 65px;
+
+            @include responsive(mobile-big, max) {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .tabs-input {
+                &.default {
+                    display: block;
+                }
+
+                &.invisible {
+                    display: none;
+                }
+            }
+
+            .input-wrapper {
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+
+    .field-beams,
+    .field-post-type {
+        .calculator-tabs-input-wrap {
+            &:empty {
+                display: none;
+            }
+        }
+
+        .calculator-input-wrap {
+            position: absolute;
+            right: 15px;
+            bottom: 0;
+
+            @include responsive(mobile-big, max) {
+                position: relative;
+            }
+        }
+    }
+
+    .popup-text {
+        background-color: transparent;
+        border: 0;
+        outline: none;
+        box-shadow: none;
+        color: $blue;
+        text-decoration: underline;
+        margin-top: 10px;
+        display: block;
+        position: relative;
+        z-index: 6;
+
+        &:focus {
+            box-shadow: none;
+            border: 0;
+            outline: none;
+        }
+    }
+
+    .modal {
+        .close-btn {
+            background: $blue;
+            color: $white;
+            border: none;
+            padding: 5px 15px;
+            font-size: 17px;
+        }
+    }
+
+    .field-length {
+        order: 1;
+    }
+
+    .field-ends {
+        order: 2;
+    }
+
+    .field-end-type {
+        order: 3;
+    }
+
+    .field-corners {
+        order: 4;
+    }
+
+    .field-beams {
+        order: 5;
+    }
+
+    .field-post-type {
+        order: 6;
+    }
+
+    .field-usage {
+        order: 7;
+    }
+
+    .field-fixings {
+        order: 8;
+    }
+
+    .field-barrier-finish {
+        order: 9;
+    }
+
+    .field-runs {
+        display: none;
+    }
+}
+
+.step-wrapper {
+    background-image: url(../inc/assets/blue-stripe-bg.png);
+    background-position: center;
+    color: $white;
+    border-radius: 3px;
+    padding: 30px;
+
+    input {
+        border: 0;
+        color: $black;
+        padding: 19px 26px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .title {
+        margin-bottom: 8px;
+    }
+
+    form.results {
+        border-top: 2px solid $black;
+        padding-top: 20px;
+        margin-top: 15px;
+
+        .form-title {
+            font-weight: 500;
+
+            .required {
+                color: red;
+            }
+        }
+
+        .form-input-wrapper {
+            input {
+                width: 240px;
+            }
+        }
+
+        table {
+            width: 100%;
+
+            td,
+            th {
+                width: 50%;
+                border: 2px solid $black;
+                padding: 15px 28px;
+                color: $white;
+                font-weight: 500;
+
+                input {
+                    background: transparent;
+                    color: #fff;
+                    padding: 0;
+                }
+            }
+
+            th {
+                color: $yellow;
+            }
+        }
+    }
+
+    .calculator-2-button {
+        background-size: 100%;
+    }
+}
+
+.calculator-step-3 {
+    .wpcf7 {
+        form {
+            .wpcf7-response-output {
+                margin-top: 20px;
+            }
+
+            label {
+                color: $blue;
+                font-family: $alt-font;
+                font-weight: 500;
+                font-size: 20px;
+
+                .required {
+                    color: red;
+                }
+            }
+
+            input {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .wpcf7-list-item {
+        margin-left: 0;
+
+        label {
+            display: flex;
+            position: relative;
+
+            [type="checkbox"] {
+                flex: 1;
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                opacity: 0;
+                position: absolute;
+
+                &:checked {
+                    + .wpcf7-list-item-label {
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            .wpcf7-list-item-label {
+                position: relative;
+                cursor: pointer;
+                padding-left: 35px;
+
+                &:before {
+                    content: "";
+                    width: 27px;
+                    height: 27px;
+                    border: 4px solid #e2e2e2;
+                    border-radius: 5px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 15px;
+                    position: absolute;
+                    left: 0;
+
+                    @include responsive(ipad-portrait, max) {
+                        width: 22px;
+                        height: 22px;
+                        border: 3px solid $grey;
+                    }
+                }
+
+                &:after {
+                    content: "\2713";
+                    display: inline-block;
+                    vertical-align: middle;
+                    position: absolute;
+                    top: 3px;
+                    left: 7px;
+                    opacity: 0;
+                    font-weight: 900;
+
+                    @include responsive(ipad-portrait, max) {
+                        top: 2px;
+                        left: 6px;
+                    }
+                }
+
+                a {
+                    color: $yellow;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.scroll-to-calculator-summary {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    background: $blue;
+    color: $white;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.09);
+    width: 50px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    @include responsive(ipad-portrait, max) {
+        display: flex;
+    }
+
+    &:hover {
+        color: $white;
+    }
+
+    &:focus {
+        outline: none;
+        border: none;
+    }
+
+    .arrow {
+        background-image: url(../inc/assets/arrow-alt-right-solid-yellow.svg);
+        width: 25px;
+        height: 25px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: rotate(90deg);
+        font-size: 0;
+        display: inline-block;
+    }
+}
+
+// Thank You Page
+.thank-you-block {
+    padding: 100px 0;
+}

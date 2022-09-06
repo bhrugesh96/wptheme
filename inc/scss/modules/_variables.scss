@@ -1,0 +1,26 @@
+// Font Family
+$primary-font: "source-sans-pro", sans-serif;
+$alt-font: "futura-pt", sans-serif;
+$bold-font: "futura-pt-bold", sans-serif;
+
+// Colors
+$black: #000;
+$white: #fff;
+$yellow: #ffcc00;
+$blue: #1761a4;
+$light-blue: #7aacd9;
+$light-grey: #f7f7f7;
+$extra-light-grey: #a5a5a5;
+$grey: #e2e2e2;
+
+// Device Width
+$breakpoints: (
+    "desktop": 1800px,
+    "medium-desktop": 1550px,
+    "mini-desktop": 1440px,
+    "laptop": 1199px,
+    "ipad-landscape": 1024px,
+    "ipad-portrait": 991px,
+    "mobile-big": 767px,
+    "mobile-small": 575px,
+);

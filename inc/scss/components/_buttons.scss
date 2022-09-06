@@ -1,0 +1,344 @@
+.btn {
+    text-transform: uppercase;
+    font-family: $bold-font;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 12px 40px;
+    min-width: 205px;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    @include responsive(medium-desktop, max) {
+        font-size: 17px;
+    }
+
+    @include responsive(mobile-big, max) {
+        font-size: 15px;
+        padding: 10px 20px;
+        min-width: 200px;
+    }
+
+    @include responsive(mobile-small, max) {
+        font-size: 14px;
+    }
+}
+
+.btn-medium {
+    font-size: 21px;
+    line-height: 1;
+    padding: 33px 20px;
+    min-width: 205px;
+
+    @include responsive(ipad-portrait, max) {
+        padding: 20px;
+    }
+
+    @include responsive(mobile-big, max) {
+        padding: 10px 20px;
+    }
+}
+
+.btn-big {
+    font-size: 21px;
+    line-height: 1;
+    padding: 33px 20px;
+    min-width: 393px;
+    text-align: center;
+
+    @include responsive(medium-desktop, max) {
+        font-size: 17px;
+        padding: 15px 20px;
+        min-width: 300px;
+    }
+
+    @include responsive(mobile-big, max) {
+        font-size: 15px;
+        padding: 10px 20px;
+        min-width: 200px;
+    }
+
+    @include responsive(mobile-small, max) {
+        font-size: 14px;
+    }
+}
+
+.calculate-btn {
+    position: relative;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    padding-right: 85px;
+    font-size: 18px;
+    margin-left: 140px;
+
+    @include responsive(desktop, max) {
+        margin-left: 0;
+    }
+
+    @include responsive(medium-desktop, max) {
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 15px;
+    }
+
+    @include responsive(ipad-portrait, max) {
+        margin-left: 15px;
+    }
+
+    &:before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: inline-block;
+        filter: brightness(0) invert(1);
+        background-image: url(../inc/assets/phone-solid.svg);
+        margin-right: 10px;
+    }
+
+    &:hover {
+        &::before {
+            filter: none;
+        }
+    }
+}
+
+.btn-blue {
+    background-color: $blue;
+    color: $white;
+    border: 4px solid $blue;
+
+    &:hover {
+        background-color: transparent;
+        color: $blue;
+    }
+}
+
+.blue-strip-btn {
+    background-image: url("../inc/assets/blue-stripe-bg.png");
+    background-size: 210%;
+    color: $white;
+    position: relative;
+    border: 4px solid $blue;
+    text-align: left;
+    @include flex;
+    @include align-items(center);
+    @include justify-content(center);
+    @include transitionAll(0.3s ease-in-out);
+
+    &:after {
+        content: "";
+        display: inline-block;
+        margin-left: 20px;
+        background-image: url(../inc/assets/arrow-alt-right-solid-white.svg);
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    &:hover {
+        background-image: url(../inc/assets/yellow-stripe-bg.png);
+        color: $black;
+        border-color: $yellow;
+
+        &:after {
+            background-image: url(../inc/assets/arrow-alt-right-solid.svg);
+        }
+    }
+
+    @include responsive(mobile-small, max) {
+        &:after {
+            margin-left: 10px;
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+.yellow-strip-btn {
+    background: url("../inc/assets/yellow-stripe-bg.png");
+    background-size: 210%;
+    color: $black;
+    position: relative;
+    border: 4px solid transparent;
+    text-align: center;
+    @include flex;
+    @include align-items(center);
+    @include justify-content(center);
+    @include transitionAll(0.3s ease-in-out);
+
+    &:after {
+        content: "";
+        display: inline-block;
+        margin-left: 20px;
+        background-image: url(../inc/assets/arrow-alt-right-solid.svg);
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    &:hover {
+        background: $black;
+        color: $yellow;
+
+        &:after {
+            background-image: url(../inc/assets/arrow-alt-right-solid-yellow.svg);
+        }
+    }
+
+    @include responsive(mobile-small, max) {
+        &:after {
+            margin-left: 10px;
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+.grey-strip-btn {
+    background: url("../inc/assets/grey-stripe-bg.png");
+    background-size: 210%;
+    color: $black;
+    position: relative;
+    border: 4px solid transparent;
+    text-align: left;
+    @include flex;
+    @include align-items(center);
+    @include justify-content(center);
+    @include transitionAll(0.3s ease-in-out);
+
+    &:after {
+        content: "";
+        display: inline-block;
+        margin-left: 20px;
+        background-image: url(../inc/assets/arrow-alt-right-solid.svg);
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    &:hover {
+        background: $black;
+        color: $white;
+
+        &:after {
+            background-image: url(../inc/assets/arrow-alt-right-solid-white.svg);
+        }
+    }
+
+    @include responsive(mobile-small, max) {
+        &:after {
+            margin-left: 10px;
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+.btn-grey {
+    border: 4px solid #e2e2e2;
+
+    &:hover {
+        background: #e2e2e2;
+    }
+}
+
+.white-transparent-btn {
+    border: 4px solid #7aacd9;
+    color: $white;
+    background: transparent;
+
+    &:hover {
+        background: #7aacd9;
+        color: $black;
+    }
+}
+
+.submit-btn {
+    position: relative;
+
+    .yellow-strip-btn {
+        background-size: 100%;
+    }
+
+    input[type="submit"] {
+        + .arrow,
+        + * + .arrow {
+            background-image: url(../inc/assets/arrow-alt-right-solid.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: calc(50% + 120px);
+            @include translateY(-50%);
+            @include transitionAll(0.3s ease-in-out);
+
+            @include responsive(mobile-small, max) {
+                width: 15px;
+                height: 15px;
+                left: calc(50% + 80px);
+            }
+        }
+
+        &:disabled {
+            + .arrow,
+            + * + .arrow {
+                opacity: 0.7;
+            }
+        }
+
+        &:hover {
+            + .arrow,
+            + * + .arrow {
+                background-image: url(../inc/assets/arrow-alt-right-solid-yellow.svg);
+            }
+        }
+    }
+
+    .wpcf7-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include translate(-50%, -50%);
+    }
+}
+
+.btn-transparent-blue {
+    padding: 12px 60px;
+    border: 3px solid $blue;
+    background: transparent;
+    font-size: 16px;
+
+    &:hover {
+        background: $blue;
+        color: $white;
+    }
+
+    @include responsive(mobile-big, max) {
+        font-size: 15px;
+        padding: 10px 20px;
+        min-width: 200px;
+    }
+
+    @include responsive(mobile-small, max) {
+        font-size: 14px;
+        padding: 9px 17px;
+        min-width: 190px;
+    }
+}

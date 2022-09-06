@@ -1,0 +1,242 @@
+footer {
+    .footer-top {
+        background-image: url(../inc/assets/blue-stripe-bg.png);
+        color: $white;
+        padding: 60px 0 105px 0;
+
+        @include responsive(ipad-portrait, max) {
+            padding: 50px 0;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            line-height: 1;
+            font-weight: 500;
+            font-family: $alt-font;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+
+            > * {
+                flex: 0 0 auto;
+                display: flex;
+                align-items: center;
+                line-height: normal;
+                margin-bottom: 0;
+                color: $white;
+                margin-bottom: 15px;
+
+                &:not(:last-child) {
+                    margin-right: 70px;
+                }
+
+                &:before {
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    margin-right: 17px;
+                    display: inline-block;
+
+                    @include responsive(mobile-small, max) {
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            .phone {
+                &:before {
+                    background-image: url(../inc/assets/phone-solid-yellow.svg);
+                }
+            }
+
+            .email {
+                &:before {
+                    width: 26px;
+                    height: 20px;
+                    background-image: url(../inc/assets/envelope-solid-yellow.svg);
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        padding: 60px 0;
+        background-color: #f7f7f7;
+
+        @include responsive(ipad-portrait, max) {
+            padding: 50px 0 20px;
+        }
+
+        .footer-logo {
+            margin-bottom: 50px;
+
+            @include responsive(ipad-portrait, max) {
+                margin-bottom: 30px;
+            }
+
+            img {
+                width: 285px;
+
+                @include responsive(ipad-portrait, max) {
+                    width: 200px;
+                }
+            }
+        }
+
+        .widget {
+            h4 {
+                margin-bottom: 10px;
+            }
+
+            .title {
+                margin-bottom: 25px;
+
+                @include responsive(mobile-big, max) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            ul {
+                padding: 0;
+                list-style: none;
+
+                li {
+                    position: relative;
+                    padding-left: 10px;
+
+                    &:not(:last-child) {
+                        margin-bottom: 4px;
+                    }
+
+                    &:after {
+                        content: "";
+                        width: 5px;
+                        height: 5px;
+                        background-color: $blue;
+                        border-radius: 100%;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        @include translateY(-50%);
+                    }
+
+                    a {
+                        color: $black;
+
+                        &:hover {
+                            color: $blue;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-form-wrap {
+            padding: 50px 45px;
+            background-color: #fff;
+            border-radius: 5px;
+            margin-top: -85%;
+
+            @include responsive(mini-desktop, max) {
+                padding: 30px 25px;
+            }
+
+            @include responsive(ipad-portrait, max) {
+                margin-top: 0;
+            }
+        }
+
+        .contact-form-text {
+            .wpcf7-list-item {
+                margin-left: 0;
+
+                label {
+                    display: inline-block;
+                    cursor: pointer;
+
+                    input[type="checkbox"] {
+                        display: none;
+
+                        &:checked {
+                            + .wpcf7-list-item-label {
+                                &::after {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                    .wpcf7-list-item-label {
+                        &:before {
+                            content: "";
+                            width: 27px;
+                            height: 27px;
+                            border: 4px solid #e2e2e2;
+                            border-radius: 5px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-right: 15px;
+
+                            @include responsive(mini-desktop, max) {
+                                width: 20px;
+                                height: 20px;
+                                border-width: 3px;
+                                margin-right: 10px;
+                            }
+
+                            @include responsive(mobile-small, max) {
+                                margin-right: 5px;
+                            }
+                        }
+
+                        &:after {
+                            content: "\2713";
+                            display: inline-block;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 3px;
+                            left: 7px;
+                            opacity: 0;
+                            font-weight: 900;
+
+                            @include responsive(mini-desktop, max) {
+                                left: 4px;
+                            }
+
+                            @include responsive(ipad-portrait, max) {
+                                top: 1px;
+                            }
+
+                            @include responsive(mobile-small, max) {
+                                left: 5px;
+                            }
+                        }
+
+                        a {
+                            color: #010101;
+                            &:hover {
+                                color: $blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .credit-text {
+        a {
+            color: $black;
+
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+}

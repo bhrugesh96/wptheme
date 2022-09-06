@@ -1,0 +1,210 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h-1,
+.h-2,
+.h-3,
+.h-4,
+.h-5,
+.h-6 {
+  font-family: $bold-font;
+  margin-bottom: 30px;
+}
+
+h1,
+.h-1 {
+  font-size: 42px;
+  line-height: 48px;
+}
+
+h2,
+.h-2 {
+  font-size: 32px;
+  line-height: 34px;
+}
+
+h3,
+.h-3 {
+  font-size: 26px;
+  line-height: 30px;
+}
+
+h4,
+.h-4 {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+h5,
+.h-5 {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+h6,
+.h-6 {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+small,
+.small {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+// Responsive
+@include responsive(mini-desktop, max) {
+  h1,
+  .h-1 {
+    font-size: 39.9px;
+    line-height: 48px;
+  }
+
+  h2,
+  .h-2 {
+    font-size: 30.4px;
+    line-height: 34px;
+  }
+
+  h3,
+  .h-3 {
+    font-size: 24.7px;
+    line-height: 30px;
+  }
+
+  h4,
+  .h-4 {
+    font-size: 20.9px;
+    line-height: 30px;
+  }
+
+  h5,
+  .h-5 {
+    font-size: 19px;
+    line-height: 25px;
+  }
+
+  h6,
+  .h-6 {
+    font-size: 17.1px;
+    line-height: 25px;
+  }
+}
+
+@include responsive(laptop, max) {
+  h1,
+  .h-1 {
+    font-size: 37.8px;
+    line-height: 45px;
+  }
+
+  h2,
+  .h-2 {
+    font-size: 28.8px;
+    line-height: 34px;
+  }
+
+  h3,
+  .h-3 {
+    font-size: 23.4px;
+    line-height: 30px;
+  }
+
+  h4,
+  .h-4 {
+    font-size: 19.8px;
+    line-height: 25px;
+  }
+
+  h5,
+  .h-5 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  h6,
+  .h-6 {
+    font-size: 16.2px;
+    line-height: 25px;
+  }
+}
+
+@include responsive(ipad-portrait, max) {
+  h1,
+  .h-1 {
+    font-size: 33.6px;
+    line-height: 40px;
+  }
+
+  h2,
+  .h-2 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  h3,
+  .h-3 {
+    font-size: 20.8px;
+    line-height: 28px;
+  }
+
+  h4,
+  .h-4 {
+    font-size: 17.6px;
+    line-height: 25px;
+  }
+
+  h5,
+  .h-5 {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  h6,
+  .h-6 {
+    font-size: 14.4px;
+    line-height: 22px;
+  }
+
+  p,
+  body {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@include responsive(mobile-big, max) {
+  h1,
+  .h-1 {
+    font-size: 21px;
+    line-height: 30px;
+  }
+
+  h3,
+  .h-3 {
+    font-size: 16.9px;
+    line-height: 25px;
+  }
+
+  h4,
+  .h-4 {
+    font-size: 14.3px;
+    line-height: 22px;
+  }
+
+  h5,
+  .h-5 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  h6,
+  .h-6 {
+    font-size: 12.8px;
+    line-height: 20px;
+  }
+}

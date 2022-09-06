@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/*================ Modules ================*/
+
+@import "modules/variables";
+@import "modules/mixins";
+
+/*================ Third-party ================*/
+@import "vendor/bootstrap";
+@import "vendor/swiper-bundle";
+
+/*================ Components ================*/
+@import "components/global";
+@import "components/buttons";
+@import "components/forms";
+@import "components/typography";
+
+/*================ Layouts ================*/
+
+@import "layouts/header";
+@import "layouts/page";
+@import "layouts/footer";
